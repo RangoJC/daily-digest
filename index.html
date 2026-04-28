@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日AI与金融速报 · 归档</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+            background: #f3eee8;
+            color: #3d3d3d;
+            min-height: 100vh;
+            padding: 24px 16px 48px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* ── Header ── */
+        .header {
+            text-align: center;
+            padding: 36px 24px 28px;
+            background: linear-gradient(135deg, #8a7a6a 0%, #6a5a4a 100%);
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 28px;
+        }
+        .header-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .header p {
+            font-size: 13px;
+            opacity: 0.75;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Stats Row ── */
+        .stats-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .stat-card {
+            flex: 1;
+            background: white;
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .stat-card .num {
+            font-size: 28px;
+            font-weight: 700;
+            color: #8a7a6a;
+            line-height: 1.1;
+        }
+        .stat-card .label {
+            font-size: 12px;
+            color: #8a8070;
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Section Title ── */
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #8a8070;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-left: 2px;
+        }
+
+        /* ── Archive List ── */
+        .archive-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .archive-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 14px;
+            padding: 16px 18px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .archive-item::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background: #b48250;
+            border-radius: 4px 0 0 4px;
+        }
+        .archive-item:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+            transform: translateY(-1px);
+        }
+        .archive-item.today::before { background: linear-gradient(180deg, #b48250, #5a9b8c); }
+
+        .item-left {
+            flex: 1;
+        }
+        .item-date {
+            font-size: 15px;
+            font-weight: 600;
+            color: #3d3d3d;
+            letter-spacing: 0.3px;
+        }
+        .item-weekday {
+            font-size: 12px;
+            color: #9a9080;
+            margin-top: 2px;
+        }
+        .item-tags {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        .item-tag {
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .tag-ai {
+            background: rgba(180,130,80,0.1);
+            color: #8a6030;
+            border: 1px solid rgba(180,130,80,0.25);
+        }
+        .tag-finance {
+            background: rgba(80,130,170,0.1);
+            color: #2a6490;
+            border: 1px solid rgba(80,130,170,0.25);
+        }
+        .tag-today {
+            background: rgba(90,155,140,0.12);
+            color: #3a7a68;
+            border: 1px solid rgba(90,155,140,0.3);
+        }
+
+        .item-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #b0a898;
+            font-size: 13px;
+        }
+        .item-arrow {
+            font-size: 16px;
+            color: #c4b8a8;
+            transition: transform 0.2s;
+        }
+        .archive-item:hover .item-arrow {
+            transform: translateX(3px);
+        }
+
+        /* ── Today Badge ── */
+        .badge-today {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #b48250, #5a9b8c);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Empty State ── */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #b0a898;
+            font-size: 14px;
+        }
+        .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
+
+        /* ── Tip Card ── */
+        .tip-card {
+            background: white;
+            border-radius: 14px;
+            padding: 16px 18px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.04);
+            font-size: 13px;
+            color: #7a7060;
+            line-height: 1.8;
+        }
+        .tip-card strong { color: #5a5040; }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #c4bab0;
+            padding-top: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 480px) {
+            .stats-row { flex-direction: column; gap: 8px; }
+            .stat-card .num { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-icon">📰</div>
+        <h1>每日AI与金融速报</h1>
+        <p>AI大事 · 金融大事 · 每日归档</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row" id="statsRow">
+        <div class="stat-card">
+            <div class="num" id="totalDays">—</div>
+            <div class="label">已收录天数</div>
+        </div>
+        <div class="stat-card">
+            <div class="num" id="latestDate">—</div>
+            <div class="label">最新一期</div>
+        </div>
+        <div class="stat-card">
+            <div class="num" id="streak">—</div>
+            <div class="label">连续更新</div>
+        </div>
+    </div>
+
+    <!-- Archive List -->
+    <div class="section-title">全部归档</div>
+    <div class="archive-list" id="archiveList">
+        <div class="empty-state">
+            <div class="icon">📂</div>
+            <div>正在加载归档列表…</div>
+        </div>
+    </div>
+
+    <!-- Tip -->
+    <div class="section-title">使用说明</div>
+    <div class="tip-card">
+        <strong>📌 收藏本页</strong>，每天打开即可查看最新速报。<br>
+        新的速报会自动出现在列表顶部，无需手动更新。<br><br>
+        <strong>🔍 速报结构</strong>：每期包含 <strong>AI大事 TOP20</strong>（按底座/工具/应用/治理分类）和 <strong>金融大事 TOP20</strong>（按宏观/行情/微观/风险/观点分类），支持分类筛选。
+    </div>
+
+    <footer>AI 自动生成 · 每日 09:00 更新</footer>
+</div>
+
+<script>
+// ── 归档数据配置 ──
+// 每次新增速报时，在此数组最前面添加一条记录
+// { date: "YYYY-MM-DD", aiCount: AI大事条数, fnCount: 金融大事条数 }
+const ARCHIVES = [
+    { date: "2026-04-27", aiCount: 18, fnCount: 18 },
+    { date: "2026-04-26", aiCount: 18, fnCount: 18 },
+    { date: "2026-04-25", aiCount: 18, fnCount: 18 },
+    { date: "2026-04-23", aiCount: 18, fnCount: 18 },
+    { date: "2026-04-22", aiCount: 18, fnCount: 18 },
+    { date: "2026-04-21", aiCount: 20, fnCount: 20 },
+    { date: "2026-04-20", aiCount: 15, fnCount: 15 },
+];
+
+// ── 工具函数 ──
+function formatDate(dateStr) {
+    const [y, m, d] = dateStr.split('-');
+    return `${y}年${m}月${d}日`;
+}
+
+function getWeekday(dateStr) {
+    const days = ['周日','周一','周二','周三','周四','周五','周六'];
+    const date = new Date(dateStr + 'T00:00:00');
+    return days[date.getDay()];
+}
+
+function getTodayStr() {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, '0');
+    const d = String(now.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
+function calcStreak(archives) {
+    if (!archives.length) return 0;
+    const sorted = [...archives].sort((a, b) => b.date.localeCompare(a.date));
+    let streak = 1;
+    for (let i = 0; i < sorted.length - 1; i++) {
+        const cur = new Date(sorted[i].date);
+        const prev = new Date(sorted[i + 1].date);
+        const diff = (cur - prev) / (1000 * 60 * 60 * 24);
+        if (diff === 1) streak++;
+        else break;
+    }
+    return streak;
+}
+
+// ── 渲染 ──
+function render() {
+    const today = getTodayStr();
+    const sorted = [...ARCHIVES].sort((a, b) => b.date.localeCompare(a.date));
+
+    // Stats
+    document.getElementById('totalDays').textContent = sorted.length;
+    if (sorted.length > 0) {
+        const [y, m, d] = sorted[0].date.split('-');
+        document.getElementById('latestDate').textContent = `${m}/${d}`;
+    }
+    document.getElementById('streak').textContent = calcStreak(sorted) + ' 天';
+
+    // Archive list
+    const list = document.getElementById('archiveList');
+    if (sorted.length === 0) {
+        list.innerHTML = `<div class="empty-state"><div class="icon">📂</div><div>暂无归档，速报生成后会自动出现</div></div>`;
+        return;
+    }
+
+    list.innerHTML = sorted.map(item => {
+        const isToday = item.date === today;
+        const isYesterday = (() => {
+            const y = new Date(today);
+            y.setDate(y.getDate() - 1);
+            return item.date === y.toISOString().slice(0, 10);
+        })();
+
+        const badgeHtml = isToday
+            ? `<span class="badge-today">✦ 今日</span>`
+            : isYesterday ? `<span class="item-tag tag-today">昨日</span>` : '';
+
+        return `
+        <a class="archive-item${isToday ? ' today' : ''}" href="./${item.date}.html">
+            <div class="item-left">
+                <div style="display:flex;align-items:center;gap:8px">
+                    <div class="item-date">${formatDate(item.date)}</div>
+                    ${badgeHtml}
+                </div>
+                <div class="item-weekday">${getWeekday(item.date)}</div>
+                <div class="item-tags">
+                    <span class="item-tag tag-ai">🤖 AI大事 ${item.aiCount} 条</span>
+                    <span class="item-tag tag-finance">📊 金融大事 ${item.fnCount} 条</span>
+                </div>
+            </div>
+            <div class="item-right">
+                <span class="item-arrow">›</span>
+            </div>
+        </a>`;
+    }).join('');
+}
+
+render();
+</script>
+</body>
+</html>
