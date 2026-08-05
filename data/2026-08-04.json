@@ -6,8 +6,8 @@
     {
       "rank": 1,
       "title": "阿里发布Qwen3.8-Max并宣布开源Max级权重",
-      "layer": "unknown",
-      "layerLabel": "🏗️ 底座",
+      "layer": "foundation",
+      "layerLabel": "底座",
       "tags": [
         "大模型",
         "开源模型"
@@ -18,8 +18,8 @@
     {
       "rank": 2,
       "title": "OpenAI下一代模型Astra取得10项数学与TCS新成果并Lean形式化",
-      "layer": "unknown",
-      "layerLabel": "🏗️ 底座",
+      "layer": "foundation",
+      "layerLabel": "底座",
       "tags": [
         "基础研究",
         "大模型"
@@ -30,8 +30,8 @@
     {
       "rank": 3,
       "title": "OpenAI发布GPT-Live全双工语音交互系统",
-      "layer": "unknown",
-      "layerLabel": "🔧 工具",
+      "layer": "tools",
+      "layerLabel": "工具",
       "tags": [
         "多模态",
         "语音AI"
@@ -42,8 +42,8 @@
     {
       "rank": 4,
       "title": "白宫敲定自愿AI监管框架并约谈OpenAI、谷歌、Meta与Anthropic",
-      "layer": "unknown",
-      "layerLabel": "⚖️ 治理",
+      "layer": "governance",
+      "layerLabel": "治理",
       "tags": [
         "监管",
         "政策"
@@ -54,8 +54,8 @@
     {
       "rank": 5,
       "title": "美团开源LongCat-2.0万亿参数模型",
-      "layer": "unknown",
-      "layerLabel": "🏗️ 底座",
+      "layer": "foundation",
+      "layerLabel": "底座",
       "tags": [
         "大模型",
         "开源模型"
@@ -66,8 +66,8 @@
     {
       "rank": 6,
       "title": "MiniMax开源新一代通用视频模型H3",
-      "layer": "unknown",
-      "layerLabel": "🏗️ 底座",
+      "layer": "foundation",
+      "layerLabel": "底座",
       "tags": [
         "多模态",
         "开源模型"
@@ -78,8 +78,8 @@
     {
       "rank": 7,
       "title": "面壁智能开源ForgeStencil：全球首个Stencil优化全自动AI系统",
-      "layer": "unknown",
-      "layerLabel": "🔧 工具",
+      "layer": "tools",
+      "layerLabel": "工具",
       "tags": [
         "AI编程",
         "工程实践"
@@ -90,8 +90,8 @@
     {
       "rank": 8,
       "title": "北大联合元空AI开源科研智能体OpenAI4S",
-      "layer": "unknown",
-      "layerLabel": "🔧 工具",
+      "layer": "tools",
+      "layerLabel": "工具",
       "tags": [
         "Agent",
         "科研"
@@ -102,8 +102,8 @@
     {
       "rank": 9,
       "title": "腾讯混元发布Hy ASR 3.0 preview语音识别模型",
-      "layer": "unknown",
-      "layerLabel": "🏗️ 底座",
+      "layer": "foundation",
+      "layerLabel": "底座",
       "tags": [
         "多模态",
         "语音识别"
@@ -114,8 +114,8 @@
     {
       "rank": 10,
       "title": "Google DeepMind发布Gemini Robotics 2物理AI栈",
-      "layer": "unknown",
-      "layerLabel": "🚀 应用",
+      "layer": "application",
+      "layerLabel": "应用",
       "tags": [
         "机器人",
         "具身智能"
@@ -126,8 +126,8 @@
     {
       "rank": 11,
       "title": "香港科技大学EmArm具身机器人手臂登上Nature Sensors",
-      "layer": "unknown",
-      "layerLabel": "🚀 应用",
+      "layer": "application",
+      "layerLabel": "应用",
       "tags": [
         "机器人",
         "具身智能"
@@ -138,8 +138,8 @@
     {
       "rank": 12,
       "title": "OpenAI宣布模型覆盖超10亿活跃用户与200万家企业",
-      "layer": "unknown",
-      "layerLabel": "🚀 应用",
+      "layer": "application",
+      "layerLabel": "应用",
       "tags": [
         "商业化",
         "C端产品"
@@ -150,8 +150,8 @@
     {
       "rank": 13,
       "title": "阿里\"千问办公\"公测，AI办公入口之争升温",
-      "layer": "unknown",
-      "layerLabel": "🚀 应用",
+      "layer": "application",
+      "layerLabel": "应用",
       "tags": [
         "AI办公",
         "Agent"
@@ -162,8 +162,8 @@
     {
       "rank": 14,
       "title": "京东外卖发布AI智能头盔",
-      "layer": "unknown",
-      "layerLabel": "🚀 应用",
+      "layer": "application",
+      "layerLabel": "应用",
       "tags": [
         "AI硬件",
         "行业趋势"
@@ -174,8 +174,8 @@
     {
       "rank": 15,
       "title": "北京亦庄AI产业融资超150亿元，爱诗智能完成29.8亿元C轮",
-      "layer": "unknown",
-      "layerLabel": "🚀 应用",
+      "layer": "application",
+      "layerLabel": "应用",
       "tags": [
         "融资",
         "行业趋势"
@@ -186,8 +186,8 @@
     {
       "rank": 16,
       "title": "恺望数据完成超亿元战略融资，多家具身智能公司战略入股",
-      "layer": "unknown",
-      "layerLabel": "🚀 应用",
+      "layer": "application",
+      "layerLabel": "应用",
       "tags": [
         "融资",
         "具身智能"
@@ -198,8 +198,8 @@
     {
       "rank": 17,
       "title": "国家金融监督管理总局发布银行业保险业AI安全开发应用指导意见",
-      "layer": "unknown",
-      "layerLabel": "⚖️ 治理",
+      "layer": "governance",
+      "layerLabel": "治理",
       "tags": [
         "监管",
         "金融AI"
@@ -210,8 +210,8 @@
     {
       "rank": 18,
       "title": "高通推出High Bandwidth Compute应对AI\"内存墙\"",
-      "layer": "unknown",
-      "layerLabel": "🏗️ 底座",
+      "layer": "foundation",
+      "layerLabel": "底座",
       "tags": [
         "AI芯片",
         "架构"
@@ -224,8 +224,8 @@
     {
       "rank": 1,
       "title": "美国25州起诉特朗普政府301关税政策",
-      "layer": "unknown",
-      "layerLabel": "🌐 宏观",
+      "layer": "macro",
+      "layerLabel": "宏观",
       "tags": [
         "地缘政治",
         "贸易摩擦"
@@ -236,8 +236,8 @@
     {
       "rank": 2,
       "title": "霍尔木兹海峡通航局势与美伊谈判陷入\"各说各话\"",
-      "layer": "unknown",
-      "layerLabel": "🌐 宏观",
+      "layer": "macro",
+      "layerLabel": "宏观",
       "tags": [
         "地缘政治",
         "原油"
@@ -248,8 +248,8 @@
     {
       "rank": 3,
       "title": "中国央行下半年工作会议部署加大逆周期调节",
-      "layer": "unknown",
-      "layerLabel": "🌐 宏观",
+      "layer": "macro",
+      "layerLabel": "宏观",
       "tags": [
         "利率",
         "货币政策"
@@ -260,8 +260,8 @@
     {
       "rank": 4,
       "title": "日本央行维持利率1%不变，下调通胀预期上调增长预期",
-      "layer": "unknown",
-      "layerLabel": "🌐 宏观",
+      "layer": "macro",
+      "layerLabel": "宏观",
       "tags": [
         "利率",
         "宏观经济"
@@ -272,8 +272,8 @@
     {
       "rank": 5,
       "title": "美国7月通胀Nowcasting显示CPI同比3.42%、核心CPI 2.52%",
-      "layer": "unknown",
-      "layerLabel": "🌐 宏观",
+      "layer": "macro",
+      "layerLabel": "宏观",
       "tags": [
         "CPI",
         "通胀"
@@ -284,8 +284,8 @@
     {
       "rank": 6,
       "title": "中国7月RatingDog制造业PMI 50.9连续八个月扩张",
-      "layer": "unknown",
-      "layerLabel": "🌐 宏观",
+      "layer": "macro",
+      "layerLabel": "宏观",
       "tags": [
         "PMI",
         "宏观经济"
@@ -296,8 +296,8 @@
     {
       "rank": 7,
       "title": "A股三大指数收跌，创业板领跌",
-      "layer": "unknown",
-      "layerLabel": "📈 行情",
+      "layer": "market",
+      "layerLabel": "行情",
       "tags": [
         "A股"
       ],
@@ -307,8 +307,8 @@
     {
       "rank": 8,
       "title": "美股三大指数收涨，道指再创历史新高",
-      "layer": "unknown",
-      "layerLabel": "📈 行情",
+      "layer": "market",
+      "layerLabel": "行情",
       "tags": [
         "美股"
       ],
@@ -318,8 +318,8 @@
     {
       "rank": 9,
       "title": "国际油价大幅回落，WTI跌破81美元",
-      "layer": "unknown",
-      "layerLabel": "📈 行情",
+      "layer": "market",
+      "layerLabel": "行情",
       "tags": [
         "原油"
       ],
@@ -329,8 +329,8 @@
     {
       "rank": 10,
       "title": "韩国股市暴跌超5%，监管拟紧急限制单股杠杆ETF",
-      "layer": "unknown",
-      "layerLabel": "📈 行情",
+      "layer": "market",
+      "layerLabel": "行情",
       "tags": [
         "韩股",
         "风险"
@@ -341,8 +341,8 @@
     {
       "rank": 11,
       "title": "证监会发布深化内地与香港资本市场合作10项举措",
-      "layer": "unknown",
-      "layerLabel": "🏢 微观",
+      "layer": "micro",
+      "layerLabel": "微观",
       "tags": [
         "券商",
         "香港市场"
@@ -353,8 +353,8 @@
     {
       "rank": 12,
       "title": "中证协修订券商流动性风险管理指引，新增跨境业务要求",
-      "layer": "unknown",
-      "layerLabel": "🏢 微观",
+      "layer": "micro",
+      "layerLabel": "微观",
       "tags": [
         "券商",
         "监管"
@@ -365,8 +365,8 @@
     {
       "rank": 13,
       "title": "亚马逊财报后两日大涨超20%，市值首破3万亿美元",
-      "layer": "unknown",
-      "layerLabel": "🏢 微观",
+      "layer": "micro",
+      "layerLabel": "微观",
       "tags": [
         "财报",
         "美股"
@@ -377,8 +377,8 @@
     {
       "rank": 14,
       "title": "Palantir Q2盈利碾压预期，美国商业收入劲增149%",
-      "layer": "unknown",
-      "layerLabel": "🏢 微观",
+      "layer": "micro",
+      "layerLabel": "微观",
       "tags": [
         "财报",
         "美股"
@@ -389,8 +389,8 @@
     {
       "rank": 15,
       "title": "中国普惠小微贷款持续增长，新发放贷款利率降至3.57%",
-      "layer": "unknown",
-      "layerLabel": "🏢 微观",
+      "layer": "micro",
+      "layerLabel": "微观",
       "tags": [
         "普惠金融",
         "银行"
@@ -401,8 +401,8 @@
     {
       "rank": 16,
       "title": "个人贷款明示综合融资成本规定正式施行，四大行消费贷利率上限6%",
-      "layer": "unknown",
-      "layerLabel": "🏢 微观",
+      "layer": "micro",
+      "layerLabel": "微观",
       "tags": [
         "银行",
         "监管"
@@ -413,8 +413,8 @@
     {
       "rank": 17,
       "title": "四川证监局处罚首例AI编造虚假信息交易期货案",
-      "layer": "unknown",
-      "layerLabel": "⚠️ 风险",
+      "layer": "risk",
+      "layerLabel": "风险",
       "tags": [
         "监管",
         "AI伦理"
@@ -425,8 +425,8 @@
     {
       "rank": 18,
       "title": "韩国央行时隔逾13年重启黄金购买计划",
-      "layer": "unknown",
-      "layerLabel": "🌐 宏观",
+      "layer": "macro",
+      "layerLabel": "宏观",
       "tags": [
         "黄金",
         "央行"
