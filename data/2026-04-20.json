@@ -1,0 +1,173 @@
+{
+  "date": "2026-04-20",
+  "aiCount": 15,
+  "fnCount": 0,
+  "ai": [
+    {
+      "rank": 1,
+      "title": "华为发布首款鸿蒙AI眼镜，2499元起开启AI穿戴新赛道",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "产品"
+      ],
+      "summary": "4月20日，华为在Pura系列及全场景新品发布会上正式推出首款搭载HarmonyOS 6的AI眼镜。产品采用超可靠钛轻架构，整机50克以内，支持第一视角4K拍摄、\"小艺看世界\"实时视觉交互及同声传译功能。售价2499元起，这是华为首次进军AI穿戴设备领域，与此前开售的千问AI眼镜S1形成直接竞争，标志着AI眼镜赛道进入\"百镜大战\"全面爆发阶段。",
+      "source": ""
+    },
+    {
+      "rank": 2,
+      "title": "月之暗面发布Kimi K2.6并开源，编码与Agent能力大幅跃升",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "基建"
+      ],
+      "summary": "4月20日晚，月之暗面（Moonshot AI）正式发布并开源新一代旗舰模型Kimi K2.6。该模型在长程编码与Agent集群能力上重点升级，支持动态任务拆解与多子Agent并行协作。在\"终极人类考试\"（Humanity's Last Exam）、SWE-Bench Pro及DeepSearchQA等基准测试中取得优异成绩，已通过官网、应用及API开放使用。",
+      "source": ""
+    },
+    {
+      "rank": 3,
+      "title": "蚂蚁灵光App投入1亿元扶持\"闪应用\"，瞄准消费级Coding Agent",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "产品"
+      ],
+      "summary": "4月20日，蚂蚁集团旗下灵光App上线满四个月，累计诞生超3000万个闪应用。灵光同步启动\"灵光闪应用创作者激励计划\"，投入1亿元专项基金，每天最高100万元激励1万个优质闪应用。同时全面升级闪应用功能，强化多智能体协作、全模态生成及手机端原生能力集成，推出社区板块\"灵光圈\"，致力于打造\"人人可用的消费级Coding Agent\"。",
+      "source": ""
+    },
+    {
+      "rank": 4,
+      "title": "爱奇艺世界大会推出AI艺人库，超百位艺人入驻引争议",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "产品"
+      ],
+      "summary": "4月20日，爱奇艺在2026世界大会上高调推出\"AI艺人库\"，宣称已签约117位艺人，依托自研纳逗Pro平台打造艺人数字分身。CEO龚宇表示AI正显著降低影视制作成本，甚至抛出\"未来真人实拍或成非遗\"的争议言论。消息一出，张若昀、于和伟、王楚然等多位艺人迅速辟谣否认签署AI授权协议，引发舆论风暴。爱奇艺随后回应称入驻仅代表\"有接洽AI影视项目的意愿\"。",
+      "source": ""
+    },
+    {
+      "rank": 5,
+      "title": "阿里发布Qwen3.6-Max-Preview预览版，六项编程基准测试最高分",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "基建"
+      ],
+      "summary": "4月20日，阿里云通义千问团队发布新一代旗舰模型预览版Qwen3.6-Max-Preview。该版本在智能体编程、世界知识和指令遵循等能力上全面迭代，在SWE-bench Pro、Terminal-Bench 2.0等六项编程基准测试中均取得最高分。千问系列此前已登顶全球调用榜，此次升级进一步巩固了其在开源模型生态中的领先地位。",
+      "source": ""
+    },
+    {
+      "rank": 6,
+      "title": "Claude推出Claude Design，一句话生成设计稿冲击Figma",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "大模型"
+      ],
+      "summary": "4月17日发布、4月20日持续发酵，Anthropic推出的Claude Design是全新对话驱动AI设计工具，由Claude Opus 4.7驱动。用户通过文字描述、图片或上传文档即可生成专业级交互原型、PPT、营销素材等。Claude首席产品官发布前三天从Figma董事会辞职，Figma股价当日大跌7%，市场将其解读为AI对设计工具行业的直接冲击信号。",
+      "source": ""
+    },
+    {
+      "rank": 7,
+      "title": "智谱GLM-5.1登顶全球开源模型第一，编程可独立工作8小时",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "基建"
+      ],
+      "summary": "4月上旬发布并在4月20日持续引爆讨论，智谱GLM-5.1在全球权威AI评测平台LMArena Code Arena专项榜单中登顶开源模型第一、全球模型第三。其核心突破是唯一达到8小时级持续工作的开源模型，在SWE-bench Pro中实现国产模型首次超越Claude Opus 4.6。GLM-5.1已全面开源，权重上线HuggingFace和ModelScope，支持免费商用。",
+      "source": ""
+    },
+    {
+      "rank": 8,
+      "title": "谷歌与Marvell启动AI推理专用芯片联合研发",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "能源"
+      ],
+      "summary": "4月19日启动、4月20日获钛媒体等报道，谷歌与Marvell联合研发AI推理专用芯片，目标将推理能效比提升至每瓦特5.0 TFLOPS以上，单芯片功耗降至150瓦以内（较主流GPU降低30%）。合作聚焦存算一体架构优化，旨在打破英伟达在AI推理芯片领域的垄断格局。",
+      "source": ""
+    },
+    {
+      "rank": 9,
+      "title": "谷歌组建精英Gemini团队专攻AI编程，布林亲自督战",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "基建"
+      ],
+      "summary": "据The Information 4月20日报道，谷歌DeepMind成立精英团队提升Gemini的AI编程能力，由预训练负责人Sebastian Borgeaud领导。联合创始人谢尔盖·布林在内部备忘录要求\"果断转向\"追赶Agent技术。谷歌约一半代码已由AI Coding工具生成，但Anthropic的Claude Code在编程市场份额领先。",
+      "source": ""
+    },
+    {
+      "rank": 10,
+      "title": "DeepSeek V4发布进入倒计时，普林斯顿研究员\"预热\"引爆关注",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "基建"
+      ],
+      "summary": "4月19日，普林斯顿AI实验室研究员Yifan Zhang在X平台发布\"V4 下周\"的隐晦内容，引发DeepSeek V4即将发布的市场推测。此前The Information报道称DeepSeek V4将在4月下旬发布，约1万亿参数，采用MoE架构，并率先支持华为昇腾950PR芯片。DeepSeek正与投资者洽谈首轮外部股权融资，计划以不低于100亿美元估值募集3亿美元以上。",
+      "source": ""
+    },
+    {
+      "rank": 11,
+      "title": "IBM与赛力斯合作打造AI视觉检测新模式，加速AI应用规模化",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "产品"
+      ],
+      "summary": "4月20日，IBM宣布与赛力斯合作，AI视觉边缘端已在赛力斯多个智能工厂实现部署，包括于2025年央视春晚重庆分会场亮相的\"超级工厂\"。这是IBM在华制造业AI落地的标志性案例，随着赛力斯车型迭代和产线扩展，预计项目逐步扩展至更多产线和制造环节。",
+      "source": ""
+    },
+    {
+      "rank": 12,
+      "title": "斯坦福《2026年AI指数报告》核心发现：中美AI模型差距几乎消失",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "芯片"
+      ],
+      "summary": "4月13日发布、本周持续发酵，斯坦福大学以人为本人工智能研究所（HAI）发布第九版《AI指数年度报告》，423页内容对全球AI发展态势系统梳理。最引人关注的发现是中美两国在AI模型性能上的差距已几乎消失，中国在AI专利数量和高影响力研究方面占据多项领先指标。报告同时指出AI训练成本在两年内下降了90%以上。",
+      "source": ""
+    },
+    {
+      "rank": 13,
+      "title": "字节跳动2025年国内营收增20%，AI投入致净利润下滑七成",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "产品"
+      ],
+      "summary": "4月20日据财新报道，字节跳动小范围与投资人沟通2025年经营情况。全年国内营收同比增长近20%，海外营收同比增长近50%，海外营收占比从25%提升至30%以上。但在AI等新兴业务相关投入增大影响下，净利润同比下滑超70%。抖音集团副总裁李亮称相关数字为国际会计准则口径，实际经营趋势良好。",
+      "source": ""
+    },
+    {
+      "rank": 14,
+      "title": "浪潮信息涨停，AI算力概念持续受资金追捧",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "产品"
+      ],
+      "summary": "4月20日，浪潮信息触及涨停，涨停价75.05元，涨幅8.69%，总市值突破1100亿元，单日成交额65.65亿元。受AI算力需求激增和云服务商集体涨价推动，浪潮信息作为AI服务器龙头持续获得资金青睐。同日，软件开发、软件服务板块涨幅居前，中证软件服务指数上涨1.34%。",
+      "source": ""
+    },
+    {
+      "rank": 15,
+      "title": "OpenAI终止Sora视频项目聚焦编程，微软集成Claude打破排他格局",
+      "layer": "foundation",
+      "layerLabel": "底座",
+      "tags": [
+        "产品"
+      ],
+      "summary": "4月19日（周日）消息、4月20日持续影响，OpenAI宣布终止内部Sora视频生成项目，将资源全面聚焦AI编程与企业应用方向。同日微软宣布将Anthropic的Claude Opus 4.7集成至9大开发环境，打破OpenAI的排他合作格局。这一系列变动标志着AI行业从\"内容生成竞赛\"加速转向\"生产力工具竞赛\"。---",
+      "source": ""
+    }
+  ],
+  "finance": []
+}

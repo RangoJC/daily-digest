@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日AI与金融速报 | 2026年5月6日</title>
+<style>
+  :root {
+    --bg: #f3eee8;
+    --card-bg: #ffffff;
+    --text: #3d3d3d;
+    --text-light: #8a8078;
+    --tab-active: #7a6e64;
+    /* AI层次色 */
+    --ai-base-tag: #8a6030; --ai-base-border: #b48250;
+    --ai-tool-tag: #3a7a68; --ai-tool-border: #5a9b8c;
+    --ai-app-tag: #7a5048; --ai-app-border: #96786e;
+    --ai-gov-tag: #8a7540; --ai-gov-border: #aa9664;
+    /* 金融层次色 */
+    --fn-macro-tag: #2a6490; --fn-macro-border: #5082aa;
+    --fn-market-tag: #a04830; --fn-market-border: #b45a46;
+    --fn-micro-tag: #4a8030; --fn-micro-border: #649650;
+    --fn-risk-tag: #a83838; --fn-risk-border: #be5050;
+    --fn-view-tag: #6a4a90; --fn-view-border: #826eaa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
+    min-height: 100vh;
+  }
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #6a5c52 0%, #8a7a6e 50%, #7a6a60 100%);
+    color: #fff;
+    padding: 28px 20px 24px;
+    text-align: center;
+    position: relative;
+  }
+  .back-btn {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.32);
+    color: rgba(255,255,255,0.92);
+    padding: 7px 13px;
+    border-radius: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s;
+  }
+  .back-btn:hover { background: rgba(255,255,255,0.28); }
+  .header-date {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    opacity: 0.82;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .header-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+  .header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .stat-pill {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 13px;
+    backdrop-filter: blur(10px);
+  }
+  /* TAB */
+  .tab-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(243,238,232,0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 0 16px;
+  }
+  .tab-btn {
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #a09890;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .tab-btn.active {
+    color: var(--tab-active);
+    border-bottom-color: var(--tab-active);
+  }
+  .tab-btn:hover:not(.active) { color: var(--text); }
+  /* PANEL */
+  .panel { display: none; padding: 16px 16px 32px; max-width: 700px; margin: 0 auto; }
+  .panel.active { display: block; }
+  /* LEGEND */
+  .legend-bar {
+    background: linear-gradient(135deg, #ece7e1 0%, #e8e2da 100%);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text);
+  }
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-name { font-weight: 600; }
+  .legend-desc { color: var(--text-light); }
+  /* FILTER */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .filter-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1.5px solid #d0c9c0;
+    background: #fff;
+    color: var(--text-light);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+    letter-spacing: 0.03em;
+  }
+  .filter-btn.active-filter {
+    background: var(--tab-active);
+    border-color: var(--tab-active);
+    color: #fff;
+  }
+  .filter-btn:hover:not(.active-filter) { border-color: var(--tab-active); color: var(--tab-active); }
+  /* CARD */
+  .news-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 12px;
+    padding: 16px 18px 14px 22px;
+    border-left-width: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    transition: box-shadow 0.2s, transform 0.18s;
+    position: relative;
+  }
+  .news-card:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .rank-badge {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 1px;
+  }
+  .rank-1 { background: linear-gradient(135deg, #c49a6c, #d9b78a); }
+  .rank-2 { background: linear-gradient(135deg, #7aab9b, #93c4b5); }
+  .rank-3 { background: linear-gradient(135deg, #a08ba8, #bba6c1); }
+  .rank-other { background: #ece7e1; color: var(--text-light) !important; }
+  .card-title { font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.5; flex: 1; }
+  .tags-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .tag {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 11.5px;
+    font-weight: 600;
+    background: rgba(0,0,0,0.04);
+    letter-spacing: 0.02em;
+  }
+  .card-summary { font-size: 13.5px; color: #5a5450; line-height: 1.78; }
+  .hl { font-weight: 700; color: #2d2d2d; }
+  /* 底座 */
+  .card-base { border-left-color: var(--ai-base-border); }
+  .tag-base { color: var(--ai-base-tag); background: rgba(180,130,80,0.1); }
+  /* 工具 */
+  .card-tool { border-left-color: var(--ai-tool-border); }
+  .tag-tool { color: var(--ai-tool-tag); background: rgba(90,155,140,0.1); }
+  /* 应用 */
+  .card-app { border-left-color: var(--ai-app-border); }
+  .tag-app { color: var(--ai-app-tag); background: rgba(150,120,110,0.1); }
+  /* 治理 */
+  .card-gov { border-left-color: var(--ai-gov-border); }
+  .tag-gov { color: var(--ai-gov-tag); background: rgba(170,150,100,0.1); }
+  /* 宏观 */
+  .card-macro { border-left-color: var(--fn-macro-border); }
+  .tag-macro { color: var(--fn-macro-tag); background: rgba(80,130,170,0.1); }
+  /* 行情 */
+  .card-market { border-left-color: var(--fn-market-border); }
+  .tag-market { color: var(--fn-market-tag); background: rgba(180,90,70,0.1); }
+  /* 微观 */
+  .card-micro { border-left-color: var(--fn-micro-border); }
+  .tag-micro { color: var(--fn-micro-tag); background: rgba(100,150,80,0.1); }
+  /* 风险 */
+  .card-risk { border-left-color: var(--fn-risk-border); }
+  .tag-risk { color: var(--fn-risk-tag); background: rgba(190,80,80,0.1); }
+  /* 观点 */
+  .card-view { border-left-color: var(--fn-view-border); }
+  .tag-view { color: var(--fn-view-tag); background: rgba(130,110,170,0.1); }
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 20px 16px 28px;
+    color: #c4bab0;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  @media (max-width: 600px) {
+    .header-title { font-size: 18px; }
+    .tab-btn { padding: 12px 16px; font-size: 14px; }
+    .card-title { font-size: 14px; }
+    .back-btn { font-size: 12px; padding: 6px 10px; }
+    .panel { padding: 12px 12px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a class="back-btn" href="javascript:window.location.href='index.html'">← 归档首页</a>
+  <div class="header-date">2026 · 05 · 06 · WEDNESDAY</div>
+  <div class="header-title">📰 每日AI与金融速报</div>
+  <div class="header-stats">
+    <div class="stat-pill">🤖 AI大事 18条</div>
+    <div class="stat-pill">📊 金融大事 18条</div>
+    <div class="stat-pill">⏱ 覆盖前一日事件</div>
+  </div>
+</div>
+
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" onclick="switchTab('ai', this)">🤖 AI大事</button>
+  <button class="tab-btn" onclick="switchTab('fn', this)">📊 金融大事</button>
+</div>
+
+<!-- ============ AI PANEL ============ -->
+<div class="panel active" id="panel-ai">
+  <div class="legend-bar">
+    <div class="legend-item"><div class="legend-dot" style="background:#b48250"></div><span class="legend-name">🏗️ 底座</span><span class="legend-desc">模型·算力·架构·能源</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#5a9b8c"></div><span class="legend-name">🔧 工具</span><span class="legend-desc">框架·插件·Agent·工作流</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#96786e"></div><span class="legend-name">🚀 应用</span><span class="legend-desc">行业·落地·场景·变现</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#aa9664"></div><span class="legend-name">⚖️ 治理</span><span class="legend-desc">法律·版权·安全·伦理</span></div>
+  </div>
+  <div class="filter-bar" id="ai-filter">
+    <button class="filter-btn active-filter" onclick="filterCards('ai','all',this)">全部</button>
+    <button class="filter-btn" onclick="filterCards('ai','base',this)">🏗️ 底座</button>
+    <button class="filter-btn" onclick="filterCards('ai','tool',this)">🔧 工具</button>
+    <button class="filter-btn" onclick="filterCards('ai','app',this)">🚀 应用</button>
+    <button class="filter-btn" onclick="filterCards('ai','gov',this)">⚖️ 治理</button>
+  </div>
+  <div id="ai-cards">
+
+    <div class="news-card card-base" data-cat="base">
+      <div class="card-header">
+        <div class="rank-badge rank-1">1</div>
+        <div class="card-title">OpenAI正式将GPT-5.5 Instant设为ChatGPT默认模型</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-base">🏗️ 底座</span><span class="tag tag-base">大模型</span></div>
+      <div class="card-summary">OpenAI于5月5日将ChatGPT默认模型升级为<span class="hl">GPT-5.5 Instant</span>，聚焦准确性与简洁性，着重减少不必要表情符号。新模型AIME 2025数学测试得分<span class="hl">81.2分</span>（前代提升15.8分），MMMU-Pro多模态推理基准76.0分，SWE-Bench Pro准确率达58.6%，新增上下文管理功能。这是GPT-5.5系列第三次重大更新，标志OpenAI加速推动旗舰模型全面商业化落地。</div>
+    </div>
+
+    <div class="news-card card-tool" data-cat="tool">
+      <div class="card-header">
+        <div class="rank-badge rank-2">2</div>
+        <div class="card-title">Meta推出代理型AI助手Hatch，谷歌同步开发7×24小时个人代理</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-tool">🔧 工具</span><span class="tag tag-tool">Agent</span></div>
+      <div class="card-summary">Meta正式推出代理型AI助手<span class="hl">Hatch</span>，基于LLaMA 3.5，整合WhatsApp、Instagram、Meta Pay等生态，具备自主规划和多步骤执行能力。谷歌同步开发代号"Remy"的Gemini个人代理，测试中用户手动操作时间减少<span class="hl">40%</span>。字节跳动亦宣布研发接入抖音生态的同类助手，全球AI Agent消费级竞争正式进入"全天候自主执行"时代。</div>
+    </div>
+
+    <div class="news-card card-gov" data-cat="gov">
+      <div class="card-header">
+        <div class="rank-badge rank-3">3</div>
+        <div class="card-title">美政府与谷歌、微软、xAI达成AI前沿模型安全审查协议</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-gov">⚖️ 治理</span><span class="tag tag-gov">监管</span></div>
+      <div class="card-summary">美国商务部下属<span class="hl">CAISI</span>于5月5日宣布与谷歌DeepMind、微软及xAI达成协议，要求三家科技巨头在新一代AI模型正式发布前提前开放权限供政府进行国家安全风险审查。这是特朗普政府AI政策从"宽松放任"转向"<span class="hl">审慎监管</span>"的标志性转变，CAISI目前已完成超40项AI模型评估。业界认为将提高安全门槛但或延缓发布节奏。</div>
+    </div>
+
+    <div class="news-card card-app" data-cat="app">
+      <div class="card-header">
+        <div class="rank-badge rank-other">4</div>
+        <div class="card-title">OpenAI推出ChatGPT自助广告管理器，商业模式转向"订阅+广告"双轮驱动</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-app">🚀 应用</span><span class="tag tag-app">商业化</span></div>
+      <div class="card-summary">OpenAI开始逐步推出ChatGPT测试版<span class="hl">自助广告管理器</span>，允许美国广告主直接注册购买广告展示于ChatGPT对话中。广告频率控制每10次对话最多1条，生成式AI广告CPM比传统社交媒体高出约<span class="hl">25%</span>。这标志着OpenAI正式从单一订阅模式向"订阅+广告"双轮转型，是应对每年500亿美元算力成本压力的商业化核心举措。</div>
+    </div>
+
+    <div class="news-card card-base" data-cat="base">
+      <div class="card-header">
+        <div class="rank-badge rank-other">5</div>
+        <div class="card-title">OpenAI披露2026年算力支出达500亿美元，科技巨头算力军备竞赛升级</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-base">🏗️ 底座</span><span class="tag tag-base">算力</span></div>
+      <div class="card-summary">OpenAI公开披露2026年算力支出预计达<span class="hl">500亿美元</span>，较2017年的3000万美元增长超166倍。微软1900亿、谷歌1750-1850亿、亚马逊2000亿美元，全球AI算力市场规模预计达<span class="hl">1.2万亿美元</span>，年复合增长超35%。AI竞争核心逻辑已从算法创新转向算力基础设施控制权，大模型集体承压的商业化变现速度成为存亡关键。</div>
+    </div>
+
+    <div class="news-card card-tool" data-cat="tool">
+      <div class="card-header">
+        <div class="rank-badge rank-other">6</div>
+        <div class="card-title">苹果iOS 27开放第三方AI模型接入，Siri底层引入Gemini和Claude</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-tool">🔧 工具</span><span class="tag tag-tool">多模态</span><span class="tag tag-tool">战略调整</span></div>
+      <div class="card-summary">苹果计划在iOS 27中首次允许用户选择谷歌Gemini、Anthropic Claude等替代Siri底层AI模型，仅支持A17 Pro及以上芯片设备（NPU达<span class="hl">17TOPS</span>）。IDC预计2026年支持第三方AI模型的智能手机占比将升至<span class="hl">45%</span>，苹果此举将深度重塑全球AI助手生态的竞合格局，Siri目前占智能助手市场35%份额。</div>
+    </div>
+
+    <div class="news-card card-base" data-cat="base">
+      <div class="card-header">
+        <div class="rank-badge rank-other">7</div>
+        <div class="card-title">中国AI大模型周调用量时隔两周再超美国，腾讯Hy3领跑全球前三</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-base">🏗️ 底座</span><span class="tag tag-base">行业洞察</span></div>
+      <div class="card-summary">据OpenRouter最新数据，4月27日至5月3日全球AI大模型总调用量达<span class="hl">23.9万亿Token</span>，中国份额升至7.942万亿Token，环比<span class="hl">增长81.7%</span>；美国份额为3.258万亿Token，环比下滑34.6%。全球前三模型中前两款均为中国AI，腾讯Hy3 preview居榜首。这是A股算力板块5月6日强势大涨的核心催化剂之一。</div>
+    </div>
+
+    <div class="news-card card-base" data-cat="base">
+      <div class="card-header">
+        <div class="rank-badge rank-other">8</div>
+        <div class="card-title">AMD Q1 AI数据中心营收破56亿美元创纪录，与Meta达成大规模芯片合作</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-base">🏗️ 底座</span><span class="tag tag-base">AI芯片</span></div>
+      <div class="card-summary">AMD第一季度AI数据中心业务营收达<span class="hl">56亿美元</span>，同比增长52%，创历史记录。旗舰MI300X芯片算力达1.4ExaFLOPS，配备192GB HBM3e超高带宽内存，并与Meta达成<span class="hl">大规模2026年采购协议</span>。尽管英伟达仍占AI加速芯片市场约80%份额，AMD正凭借差异化技术快速扩大市场份额，5月6日美股芯片板块大涨印证了这一趋势。</div>
+    </div>
+
+    <div class="news-card card-app" data-cat="app">
+      <div class="card-header">
+        <div class="rank-badge rank-other">9</div>
+        <div class="card-title">亚马逊股价创历史新高，AWS云收入同比增28%至376亿美元</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-app">🚀 应用</span><span class="tag tag-app">商业化</span></div>
+      <div class="card-summary">亚马逊股价触及<span class="hl">258.79美元</span>创历史新高，市值突破2.78万亿美元，过去一年涨幅41.4%。2000亿美元AI资本支出计划主要聚焦云基础设施与自研芯片，AWS云收入同比增长<span class="hl">28%</span>至376亿美元。一季度中国数据中心市场需求激增，康明斯披露在华发电设备销售同比飙升84%，印证AI算力需求热潮持续蔓延全球供应链。</div>
+    </div>
+
+    <div class="news-card card-app" data-cat="app">
+      <div class="card-header">
+        <div class="rank-badge rank-other">10</div>
+        <div class="card-title">OpenAI与Anthropic同日争相拉拢华尔街资管巨头组建AI合资企业</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-app">🚀 应用</span><span class="tag tag-app">商业化</span></div>
+      <div class="card-summary">OpenAI从TPG、博枫、Advent、贝恩资本筹集逾<span class="hl">40亿美元</span>成立企业AI推广合资公司；几分钟后Anthropic宣布与黑石、高盛合作成立类似公司。双方同日争相进军华尔街，标志着AI商业战线从消费端向<span class="hl">金融和企业服务端</span>大规模扩张，也是AI巨头在技术建设期后加速向B端变现的关键转折。</div>
+    </div>
+
+    <div class="news-card card-app" data-cat="app">
+      <div class="card-header">
+        <div class="rank-badge rank-other">11</div>
+        <div class="card-title">鸿海四月营收激增30%，AI服务器市场规模预计达1251亿美元</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-app">🚀 应用</span><span class="tag tag-app">行业趋势</span></div>
+      <div class="card-summary">鸿海（富士康）4月营收达<span class="hl">新台币5109亿元</span>（约158亿美元），同比增长30%，大幅超市场预期，AI服务器强劲需求是核心驱动力。AI服务器物料成本较传统服务器高3至5倍，为鸿海带来更高毛利率空间。全球AI服务器市场规模预计2026年达<span class="hl">1251亿美元</span>，同比增长50%，算力硬件供应链业绩集体兑现预期。</div>
+    </div>
+
+    <div class="news-card card-base" data-cat="base">
+      <div class="card-header">
+        <div class="rank-badge rank-other">12</div>
+        <div class="card-title">Nscale斥资6.95亿欧元扩建葡萄牙AI液冷数据中心</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-base">🏗️ 底座</span><span class="tag tag-base">算力</span></div>
+      <div class="card-summary">欧洲AI算力服务商Nscale宣布斥资<span class="hl">6.95亿欧元</span>扩建葡萄牙AI数据中心，采用先进液冷技术将PUE降至1.1以下，节能较风冷提升30%-50%。全球液冷市场规模预计2026年突破<span class="hl">170亿美元</span>，欧盟与日本同日深化AI与量子技术战略合作，涵盖数据治理、量子计算等五大领域，欧洲本土算力布局加速提速。</div>
+    </div>
+
+    <div class="news-card card-tool" data-cat="tool">
+      <div class="card-header">
+        <div class="rank-badge rank-other">13</div>
+        <div class="card-title">英伟达与ServiceNow合作发布企业级AI代理平台</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-tool">🔧 工具</span><span class="tag tag-tool">Agent</span></div>
+      <div class="card-summary">英伟达与ServiceNow宣布合作，整合NIM微服务与Now Platform，聚焦IT运维、客服等企业级AI代理场景，可将<span class="hl">GPU资源占用率降低约25%</span>。麦肯锡报告显示62%组织已尝试AI代理，但仅<span class="hl">23%</span>实现规模化扩展，企业级AI代理的"落地鸿沟"问题突出。此次合作旨在通过标准化软硬件协同栈帮助企业跨越这一鸿沟。</div>
+    </div>
+
+    <div class="news-card card-app" data-cat="app">
+      <div class="card-header">
+        <div class="rank-badge rank-other">14</div>
+        <div class="card-title">大模型商业化加速：AI行业正式从"烧钱研发"转入"多元变现"阶段</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-app">🚀 应用</span><span class="tag tag-app">行业趋势</span></div>
+      <div class="card-summary">4月初至5月6日，国内外大模型迎来"<span class="hl">超级更新月</span>"，OpenAI、Anthropic、DeepSeek、阿里等头部企业密集发布新版本。算力成本压顶成为集体痛点，各家通过蒸馏、量化、MoE稀疏架构等提升效率。医疗、金融、法律等高价值B端场景成为主战场，C端以广告+订阅为路径，AI行业商业化转型提速。</div>
+    </div>
+
+    <div class="news-card card-app" data-cat="app">
+      <div class="card-header">
+        <div class="rank-badge rank-other">15</div>
+        <div class="card-title">泡泡玛特拒绝AI交互坚守情绪经济，反AI浪潮渗透消费品牌</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-app">🚀 应用</span><span class="tag tag-app">C端产品</span></div>
+      <div class="card-summary">潮玩巨头泡泡玛特公开表示刻意回避AI化交互，坚守人工制造带来的"不确定性"情绪价值，认为AI生成内容将削弱盲盒情绪溢价。泡泡玛特2026年Q1营收同比增长超<span class="hl">90%</span>，印证了情绪经济在AI浪潮中的独特韧性，也引发行业关于"AI+消费品边界"的广泛讨论，消费者对"人类创意"溢价的强烈需求获得市场验证。</div>
+    </div>
+
+    <div class="news-card card-base" data-cat="base">
+      <div class="card-header">
+        <div class="rank-badge rank-other">16</div>
+        <div class="card-title">OpenSeeker-v2学术团队仅凭SFT登榜全球前列，小团队颠覆大厂逻辑</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-base">🏗️ 底座</span><span class="tag tag-base">开源模型</span></div>
+      <div class="card-summary">高校学术团队发布OpenSeeker-v2，仅通过<span class="hl">监督微调（SFT）</span>在多项基准测试中登榜全球前列，挑战"大规模算力+RLHF才能训练顶级模型"的传统认知。这一成果证明了<span class="hl">高质量数据与精细化训练流程</span>对模型能力的决定性作用，预示着顶尖AI能力边界被持续打低，小团队崛起将进一步压低大模型准入门槛。</div>
+    </div>
+
+    <div class="news-card card-gov" data-cat="gov">
+      <div class="card-header">
+        <div class="rank-badge rank-other">17</div>
+        <div class="card-title">白宫拟成立AI监管工作组，前沿模型发布前审查成全球趋势</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-gov">⚖️ 治理</span><span class="tag tag-gov">政策</span></div>
+      <div class="card-summary">美国政府5月4日至6日密集释放AI监管收紧信号，白宫拟成立AI监管工作组，统筹前沿模型安全评估，态度从"<span class="hl">不干预</span>"明确转向联邦层面审查。分析人士指出此举可能借鉴英国多层安全监督模式，与欧盟《人工智能法案》形成呼应。全球主要经济体AI监管趋势正由<span class="hl">事后补救</span>向"发布前合规"加速转变。</div>
+    </div>
+
+    <div class="news-card card-base" data-cat="base">
+      <div class="card-header">
+        <div class="rank-badge rank-other">18</div>
+        <div class="card-title">DeepSeek或获国家大基金450亿估值注资，中国主权AI战略落子</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-base">🏗️ 底座</span><span class="tag tag-base">融资</span></div>
+      <div class="card-summary">据AI Top100报道，DeepSeek或将获得<span class="hl">国家集成电路产业投资基金（大基金）</span>战略性注资，当前估值约450亿元人民币。此前已完成200亿元融资，大基金入场被市场解读为"国家队"押注国产基础模型的主权AI战略落子。DeepSeek-V4系列全面拥抱<span class="hl">华为昇腾芯片</span>后，已成为中国最重要的自主可控大模型品牌。</div>
+    </div>
+
+  </div><!-- end ai-cards -->
+</div><!-- end panel-ai -->
+
+<!-- ============ FINANCE PANEL ============ -->
+<div class="panel" id="panel-fn">
+  <div class="legend-bar">
+    <div class="legend-item"><div class="legend-dot" style="background:#5082aa"></div><span class="legend-name">🌐 宏观</span><span class="legend-desc">央行·经济·地缘·财政</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#b45a46"></div><span class="legend-name">📈 行情</span><span class="legend-desc">股债汇商品·资金流向</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#649650"></div><span class="legend-name">🏢 微观</span><span class="legend-desc">财报·并购·IPO·行业</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#be5050"></div><span class="legend-name">⚠️ 风险</span><span class="legend-desc">违约·危机·黑天鹅</span></div>
+    <div class="legend-item"><div class="legend-dot" style="background:#826eaa"></div><span class="legend-name">🔍 观点</span><span class="legend-desc">研报·预测·策略展望</span></div>
+  </div>
+  <div class="filter-bar" id="fn-filter">
+    <button class="filter-btn active-filter" onclick="filterCards('fn','all',this)">全部</button>
+    <button class="filter-btn" onclick="filterCards('fn','macro',this)">🌐 宏观</button>
+    <button class="filter-btn" onclick="filterCards('fn','market',this)">📈 行情</button>
+    <button class="filter-btn" onclick="filterCards('fn','micro',this)">🏢 微观</button>
+    <button class="filter-btn" onclick="filterCards('fn','risk',this)">⚠️ 风险</button>
+    <button class="filter-btn" onclick="filterCards('fn','view',this)">🔍 观点</button>
+  </div>
+  <div id="fn-cards">
+
+    <div class="news-card card-macro" data-cat="macro">
+      <div class="card-header">
+        <div class="rank-badge rank-1">1</div>
+        <div class="card-title">美伊接近达成停战谅解备忘录，国际油价单日暴跌近8%</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-macro">🌐 宏观</span><span class="tag tag-macro">地缘政治</span></div>
+      <div class="card-summary">5月6日，白宫认为与伊朗接近达成一份<span class="hl">14条款停战谅解备忘录</span>，内容包括伊朗暂停铀浓缩、美国解除制裁，被称为"自冲突爆发以来最接近协议的一刻"。消息刺激国际油价大幅跳水，<span class="hl">WTI跌近8%</span>回落至95美元/桶下方，布伦特原油重挫8%跌破100美元/桶。特朗普在社交媒体确认框架基本成型，全球股市同步上扬，避险情绪显著降温。</div>
+    </div>
+
+    <div class="news-card card-market" data-cat="market">
+      <div class="card-header">
+        <div class="rank-badge rank-2">2</div>
+        <div class="card-title">A股五月开门红：科创50大涨5.47%，成交额重返3.2万亿元</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-market">📈 行情</span><span class="tag tag-market">A股</span></div>
+      <div class="card-summary">5月6日A股五一节后首个交易日迎来全线大涨。截至收盘，<span class="hl">上证指数涨1.17%报4160.17点</span>，深证成指涨2.33%，创业板指涨2.75%，科创50指数大涨<span class="hl">5.47%</span>至1656.95点，科创综指盘中突破2000点创历史新高。沪深成交额达<span class="hl">3.23万亿元</span>，较上一交易日放量近5000亿元，超3800只个股上涨，AI芯片+新能源双轮驱动格局延续。</div>
+    </div>
+
+    <div class="news-card card-market" data-cat="market">
+      <div class="card-header">
+        <div class="rank-badge rank-3">3</div>
+        <div class="card-title">海光信息20cm涨停创历史新高，寒武纪大涨9%坐稳A股股王</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-market">📈 行情</span><span class="tag tag-market">AI芯片</span></div>
+      <div class="card-summary">A股算力芯片板块5月6日全面爆发，<span class="hl">海光信息以20cm涨停至355.50元</span>，再创历史新高，年内涨幅近60%，总市值超8200亿元。<span class="hl">寒武纪大涨超9%至1889.10元</span>，稳居A股股王。港股方面，芯成科技两日累计涨幅一度达约400%，澜起科技创上市以来新高。驱动因素：中国AI大模型调用量再超美国+北美云厂商AI资本支出预期强化。</div>
+    </div>
+
+    <div class="news-card card-macro" data-cat="macro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">4</div>
+        <div class="card-title">美联储鲍威尔"告别会"出现34年最大分歧，维持利率3.5%-3.75%不变</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-macro">🌐 宏观</span><span class="tag tag-macro">利率</span></div>
+      <div class="card-summary">美联储4月29日会议宣布将联邦基金利率维持在<span class="hl">3.5%-3.75%</span>不变，但12名FOMC委员中有<span class="hl">4人投下反对票</span>，创自1992年以来最大分歧——1人主张降息25基点，3人反对声明中过于宽松倾向。联储内部对"是否应暗示未来可能进一步降息"存在严重分歧。鲍威尔表示将留任理事，候任主席沃什已获参议院放行。</div>
+    </div>
+
+    <div class="news-card card-market" data-cat="market">
+      <div class="card-header">
+        <div class="rank-badge rank-other">5</div>
+        <div class="card-title">美股三大指数全线创新高，英特尔大涨近13%，美光市值破7000亿美元</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-market">📈 行情</span><span class="tag tag-market">美股</span></div>
+      <div class="card-summary">美东时间5月6日，<span class="hl">道指涨0.73%，纳指涨1.03%，标普500涨0.81%</span>，三大指数全线创历史新高。存储芯片板块领涨，英特尔大涨约<span class="hl">13%</span>，美光涨11.10%市值突破7000亿美元年内涨幅超120%，英伟达涨5.68%。推动力量：AI资本支出预期强化+美伊停火缓和地缘风险+油价回落减轻通胀压力三重共振。</div>
+    </div>
+
+    <div class="news-card card-macro" data-cat="macro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">6</div>
+        <div class="card-title">央行开展3000亿买断式逆回购，保障节后流动性充裕</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-macro">🌐 宏观</span><span class="tag tag-macro">利率</span></div>
+      <div class="card-summary">2026年5月6日，中国人民银行开展<span class="hl">3000亿元买断式逆回购</span>操作，期限3个月（91天），到期日为8月5日。此举被市场解读为央行节后积极维护银行体系流动性充裕的主动应对举措，预期短端资金利率将维持平稳，为<span class="hl">A股五月行情</span>提供流动性支撑基础。结合政治局会议定调稳增长，宏观流动性环境整体利好权益资产。</div>
+    </div>
+
+    <div class="news-card card-macro" data-cat="macro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">7</div>
+        <div class="card-title">商务部发布阻断禁令，反制美国对5家中企涉伊朗制裁</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-macro">🌐 宏观</span><span class="tag tag-macro">宏观经济</span><span class="tag tag-macro">贸易摩擦</span></div>
+      <div class="card-summary">商务部发布<span class="hl">2026年第21号公告</span>，针对美国对5家中国企业实施涉伊朗石油制裁措施，发布阻断禁令，规定相关中国企业不得承认、执行或遵守美国制裁措施。这是中国在地缘政治博弈中<span class="hl">维护本国企业合法经营权益</span>的制度性反制动作，也体现了中国对中东能源利益的主权保护立场，标志中美在制裁执行层面的博弈持续深化。</div>
+    </div>
+
+    <div class="news-card card-micro" data-cat="micro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">8</div>
+        <div class="card-title">A股上市公司2025年分红总额达2.43万亿元，工商银行蝉联"分红王"</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-micro">🏢 微观</span><span class="tag tag-micro">财报</span></div>
+      <div class="card-summary">据中上协报告，2025年共<span class="hl">3711家上市公司</span>公布现金分红方案，合计分红<span class="hl">2.43万亿元</span>创历史新高。工商银行全年总派息约1105.93亿元蝉联"分红王"，中国移动、建设银行全年分红亦超1000亿元。大规模分红潮强化了市场对高股息资产的长期配置吸引力，险资等机构持续增持高分红蓝筹，中特估板块获底部支撑。</div>
+    </div>
+
+    <div class="news-card card-micro" data-cat="micro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">9</div>
+        <div class="card-title">国产创新药一季度商业化提速，近八成医药上市公司实现盈利</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-micro">🏢 微观</span><span class="tag tag-micro">财报</span></div>
+      <div class="card-summary">2026年一季度，国产创新药商业化落地提速、海外授权交易（BD）密集兑现，带动多家医药生物上市公司业绩攀升。截至4月30日，已有<span class="hl">500余家医药生物上市公司</span>披露一季报，<span class="hl">近八成实现盈利</span>，整体好于市场预期。多家龙头药企净利润同比增超50%，医药板块在AI概念退潮阶段提供了重要的结构性配置机会。</div>
+    </div>
+
+    <div class="news-card card-market" data-cat="market">
+      <div class="card-header">
+        <div class="rank-badge rank-other">10</div>
+        <div class="card-title">港股芯片板块逆市大涨，芯成科技两日累计涨幅一度达400%</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-market">📈 行情</span><span class="tag tag-market">港股</span></div>
+      <div class="card-summary">5月5日港股整体回调，恒生指数跌0.76%，但芯片板块逆势大涨，<span class="hl">芯成科技两日累计涨幅一度达约400%</span>。5月6日港股受A股大涨带动全面走高，恒生指数盘中涨超1%，港股通信息技术ETF开盘拉涨逾5%，澜起科技创上市新高。AMD和英特尔财报超预期强化了港股半导体板块的<span class="hl">AI算力上行动能</span>。</div>
+    </div>
+
+    <div class="news-card card-market" data-cat="market">
+      <div class="card-header">
+        <div class="rank-badge rank-other">11</div>
+        <div class="card-title">黄金在4575美元/盎司附近震荡偏强，避险需求受美伊缓和压制</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-market">📈 行情</span><span class="tag tag-market">黄金</span></div>
+      <div class="card-summary">5月6日亚洲时段黄金在<span class="hl">4625美元/盎司</span>附近震荡偏强，5月5日反弹约1.2%至4575美元。美伊停战备忘录消息发酵后布伦特油价跌破100美元/桶，阶段性压制部分避险买盘，但黄金表现相对抗跌，体现出<span class="hl">货币宽松预期和地缘溢价</span>双重支撑的定价逻辑。本周美国就业数据将成关键变量，或影响美联储下一步决策预期。</div>
+    </div>
+
+    <div class="news-card card-macro" data-cat="macro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">12</div>
+        <div class="card-title">澳大利亚央行加息25基点至4.35%，全球货币政策分化持续</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-macro">🌐 宏观</span><span class="tag tag-macro">利率</span></div>
+      <div class="card-summary">5月5日，澳大利亚联储（RBA）宣布将基准利率上调<span class="hl">25基点至4.35%</span>，是近期主要央行中为数不多的加息动作，与美联储维持不变、欧洲央行偏鸽形成鲜明对比。澳联储此举主要应对国内通胀粘性及大宗商品高价带来的输入型通胀压力，对澳元汇率形成短期支撑，也再次凸显全球货币政策周期的<span class="hl">明显分化格局</span>。</div>
+    </div>
+
+    <div class="news-card card-micro" data-cat="micro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">13</div>
+        <div class="card-title">商业航天产业利好密集，多地加速布局赛道争占IPO窗口</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-micro">🏢 微观</span><span class="tag tag-micro">IPO</span></div>
+      <div class="card-summary">节前上海商业航天海上发射技术有限公司正式设立，由<span class="hl">五家国央企联合持股</span>，覆盖产业链上下游关键环节。多地政府加快布局，2026年相关企业IPO进程明显提速，4月以来商业航天板块持续获资金加仓。商业航天与AI基础设施（卫星互联网、计算卫星）的融合预期，正成为<span class="hl">新型投资主线</span>之一，7只绩优潜力股受融资客重点关注。</div>
+    </div>
+
+    <div class="news-card card-market" data-cat="market">
+      <div class="card-header">
+        <div class="rank-badge rank-other">14</div>
+        <div class="card-title">比特币月涨超20%，加密资产行情走高仍需防范剧烈波动风险</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-market">📈 行情</span><span class="tag tag-market">外汇</span></div>
+      <div class="card-summary">5月6日，比特币<span class="hl">月内涨幅超20%</span>，行情持续走高受到市场关注。推动因素主要包括：美元阶段性走弱、全球流动性预期改善、以及机构资金通过比特币ETF持续流入。监管层同步提示加密资产价格波动剧烈投资者应做好风险管控，当前行情与<span class="hl">AI算力需求高能耗叙事</span>存在共鸣，部分机构将比特币视为通胀对冲工具。</div>
+    </div>
+
+    <div class="news-card card-view" data-cat="view">
+      <div class="card-header">
+        <div class="rank-badge rank-other">15</div>
+        <div class="card-title">伯克希尔股东大会：巴菲特称当前非理想投资环境，盛赞阿贝尔接班</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-view">🔍 观点</span><span class="tag tag-view">策略展望</span></div>
+      <div class="card-summary">北京时间5月2日，伯克希尔年度股东大会举行，巴菲特盛赞新任CEO<span class="hl">格雷格·阿贝尔</span>，将当前市场比作"附带赌场的教堂"，认为当前并非理想投资环境。阿贝尔重申将坚守长期价值投资原则，不因短期波动调整基本战略。阿贝尔首次独立主持会议的稳定表现，被市场视为<span class="hl">伯克希尔后巴菲特时代</span>平稳过渡的积极信号。</div>
+    </div>
+
+    <div class="news-card card-view" data-cat="view">
+      <div class="card-header">
+        <div class="rank-badge rank-other">16</div>
+        <div class="card-title">机构普遍看好A股五月"结构为王"，AI+新能源双主线受关注</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-view">🔍 观点</span><span class="tag tag-view">策略展望</span></div>
+      <div class="card-summary">五一假期后，私募机构对A股5月整体持乐观态度，预期"<span class="hl">偏强震荡、结构为王</span>"格局。国金证券发研报持续看好AI算力硬件、存储超级周期及半导体自主可控三条主线，称<span class="hl">算力黄金年代开启</span>。存储芯片涨价有望持续，半导体设备快速增长，A股产业链公司2025及2026Q1业绩持续超预期，5月6日大涨印证了机构核心判断。</div>
+    </div>
+
+    <div class="news-card card-macro" data-cat="macro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">17</div>
+        <div class="card-title">中美经贸高层视频通话，双方同意管控分歧推动关系健康发展</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-macro">🌐 宏观</span><span class="tag tag-macro">贸易摩擦</span></div>
+      <div class="card-summary">4月30日晚，中美经贸中方牵头人<span class="hl">何立峰</span>与美国财政部长贝森特、贸易代表格里尔举行视频通话，围绕落实两国元首釜山会晤共识就经贸问题进行坦诚交流。中方就美对华经贸限制措施表达关切，双方同意发挥经贸磋商机制作用，管控分歧、加强合作。被市场视为中美在关税分歧背景下维持<span class="hl">对话渠道的积极信号</span>。</div>
+    </div>
+
+    <div class="news-card card-micro" data-cat="micro">
+      <div class="card-header">
+        <div class="rank-badge rank-other">18</div>
+        <div class="card-title">英特尔Q1财报超预期，AI PC需求带动数据中心业务强势复苏</div>
+      </div>
+      <div class="tags-row"><span class="tag tag-micro">🏢 微观</span><span class="tag tag-micro">财报</span></div>
+      <div class="card-summary">英特尔发布2026年一季度财报，业绩超市场预期，<span class="hl">AI PC芯片组强劲出货</span>和数据中心业务复苏是主要驱动力，股价当日大涨约<span class="hl">13%</span>，多家机构上调目标价。一季报证明英特尔在传统服务器和AI PC领域市场地位仍然稳固，进一步强化了"AI算力全面渗透传统硬件"的市场叙事，是周二美股科技板块全面走强的重要催化剂。</div>
+    </div>
+
+  </div><!-- end fn-cards -->
+</div><!-- end panel-fn -->
+
+<div class="footer">
+  <div>📌 本速报由 AI 自动生成，信息来源于公开渠道，仅供参考，不构成投资建议。</div>
+  <div style="margin-top:6px;">Generated by WorkBuddy · 2026-05-07 09:15 CST</div>
+</div>
+
+<script>
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('panel-' + tab).classList.add('active');
+  window.scrollTo({ top: document.getElementById('tabBar').offsetTop - 10, behavior: 'smooth' });
+}
+
+function filterCards(panel, cat, btn) {
+  var filterId = panel + '-filter';
+  document.querySelectorAll('#' + filterId + ' .filter-btn').forEach(b => b.classList.remove('active-filter'));
+  btn.classList.add('active-filter');
+  var cardsId = panel + '-cards';
+  document.querySelectorAll('#' + cardsId + ' .news-card').forEach(function(card) {
+    if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
